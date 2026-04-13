@@ -29,11 +29,17 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Attack!"); 
+            currentWeapon.Shoot();
 
-            if (currentWeapon != null)
+            Debug.Log("Attack!"); 
+      
+        }
+
+        if (context.canceled)
+        {
+            if (currentWeapon is FireWeapon fireWeapon)
             {
-                currentWeapon.Shoot();
+                fireWeapon.StopFire();
             }
         }
     }

@@ -19,7 +19,7 @@ public class Pistol : Weapon
 
     public override void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); //So bullet prefabs spawns at firePoint's pos
 
         Debug.Log("Pistol shoot");
     }
