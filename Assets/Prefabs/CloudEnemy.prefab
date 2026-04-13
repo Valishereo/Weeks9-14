@@ -180,4 +180,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 10
-  speed: 2
+  speed: 1.5

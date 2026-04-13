@@ -22,7 +22,7 @@ public class FireWeapon : Weapon
 
     }
 
-    public override void Shoot()
+    public override void Shoot() //activates fire when player pressed spacebar/left click
     {
         if (fireCoroutine == null)
         {
@@ -34,7 +34,7 @@ public class FireWeapon : Weapon
 
     }
 
-    public void StopFire()
+    public void StopFire() //to stop fire when the player stops pressing spacebar/left click
     {
         if (fireCoroutine != null)
         {
@@ -50,7 +50,7 @@ public class FireWeapon : Weapon
         {
             Debug.Log("Fire active...");
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.2f); //wait time for fire
         }
     }
 

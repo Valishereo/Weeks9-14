@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    public float damage = 3f;
-    public float damageDelay = 1f;
+    public float damage = 10f;
+    public float damageDelay = 0.1f;
 
     private float timer = 0f;
 
@@ -27,7 +27,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
             if (timer >= damageDelay)
             {
-                collision.GetComponent<Enemy>().TakeDamage(damage); //do 3 dmg, each with a bit of delay in between
+                collision.GetComponent<Enemy>().TakeDamage(damage); //do 5 dmg, each with a bit of delay in between
                 timer = 0f;
             }
         }

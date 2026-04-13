@@ -19,7 +19,11 @@ public class Pistol : Weapon
 
     public override void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); //So bullet prefabs spawns at firePoint's pos
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity); //So bullet prefabs spawns at firePoint's pos
+
+        float direction = GetComponentInParent<SpriteRenderer>().flipX ? -1f : 1f; //please flip I beg
+
+        bullet.GetComponent<Bullet>().direction = new Vector2(direction, 0);
 
         Debug.Log("Pistol shoot");
     }

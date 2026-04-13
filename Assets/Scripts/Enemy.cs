@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
     public float health = 10f;
 
-    public float speed = 2f;
+    public float speed = 1f;
     private Transform player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,7 +19,12 @@ public class Enemy : MonoBehaviour
         if (player != null)
         {
             Vector2 direction = (player.position - transform.position).normalized;
-            transform.position += (Vector3)direction * speed * Time.deltaTime;
+            Vector3 newPosition = transform.position += (Vector3)direction * speed * Time.deltaTime;
+
+            newPosition.x = Mathf.Clamp(newPosition.x, -10f, 10f); //so it doesn't go out of the borders
+            newPosition.y = Mathf.Clamp(newPosition.y, -4f, 4f);
+
+            transform.position = newPosition;
         }
     }
 
